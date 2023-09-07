@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# ROS 2 artifacts
+build/
+install/
+log/
+logs/
