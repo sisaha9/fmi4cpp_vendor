@@ -34,6 +34,11 @@ jobs:
       - name: Build Workspace
         run: |
           bash -c 'source /opt/ros/${{ matrix.ros_distro }}/setup.bash; \
+          mkdir src; \
+          mv external src; \
+          mkdir -p src/fmi4cpp_vendor; \
+          mv CMakeLists.txt src/fmi4cpp_vendor; \
+          mv package.xml src/fmi4cpp_vendor; \
           colcon build --event-handlers console_cohesion+ --cmake-args -DCMAKE_BUILD_TYPE=Release'
       - name: Run Tests
         run: |
