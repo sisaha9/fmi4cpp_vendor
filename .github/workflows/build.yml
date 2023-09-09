@@ -42,7 +42,7 @@ jobs:
         with:
           package-name: fmi4cpp_vendor
           target-ros2-distro: ${{ matrix.ros_distribution }}
-          vcs-repo-file-url: ${{ github.workspace }}/depend.repos
+          vcs-repo-file-url: depend.repos
           colcon-defaults: |
             {
               "build": {
