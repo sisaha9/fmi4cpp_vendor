@@ -27,6 +27,7 @@ jobs:
       - name: Install Dependencies
         run: |
           bash -c 'source /opt/ros/${{ matrix.ros_distro }}/setup.bash; \
+          vcs import < depend.repos; \
           sudo apt update; \
           rosdep update --include-eol-distros; \
           rosdep install -y -r --rosdistro ${ROS_DISTRO} --ignore-src --from-paths .'
