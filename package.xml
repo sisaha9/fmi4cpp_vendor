@@ -4,27 +4,26 @@
   <name>fmi4cpp_vendor</name>
   <version>0.1.0</version>
   <description>
-    Wrapper around FMI4cpp that ships with a CMake module
+    Wrapper around fmi4cpp, providing  an ExternalProject build of fmi4cpp.
   </description>
-  <maintainer email="sisahawork@gmail.com">Siddharth Saha</maintainer>
-  <license>Apache License 2.0</license>
 
+  <maintainer email="sisahawork@gmail.com">Siddharth Saha</maintainer>
+
+  <license>Apache License 2.0</license>  <!-- the contents of this package are Apache 2.0 -->
+  <license>MIT</license>  <!-- fmi4cpp is MIT -->
   <url type="website">https://github.com/NTNU-IHB/FMI4cpp</url>
   <author email="sisahawork@gmail.com">Siddharth Saha</author>
 
-  <buildtool_depend condition="$ROS_VERSION == 1">catkin</buildtool_depend>
-  <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
-  <buildtool_depend>git</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_vendor_package</buildtool_depend>
 
-  <build_depend>ros_environment</build_depend>
   <build_depend>libzip-dev</build_depend>
   <build_depend>pugixml-dev</build_depend>
 
-  <test_depend condition="$ROS_VERSION == 2">ament_lint_auto</test_depend>
-  <test_depend condition="$ROS_VERSION == 2">ament_lint_common</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <export>
-    <build_type condition="$ROS_VERSION == 1">catkin</build_type>
-    <build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
